@@ -1,0 +1,27 @@
+# Local Terraform configuration files
+terraform.tfvars
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Exclude any .tfvars files that may contain sensitive data
+*.tfvars
+
+# Terraform plan files
+*.tfplan
+
+# .terraform directory
+.terraform/
+
+# Ignore override files as they are usually not tracked in version control
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore other system files and directories
+.DS_Store
+Thumbs.db
+/.terraform.lock.hcl
