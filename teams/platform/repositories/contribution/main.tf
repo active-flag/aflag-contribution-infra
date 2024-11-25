@@ -31,3 +31,21 @@ resource "github_repository" "this" {
     }
   }
 }
+
+resource "github_repository_dependabot_security_updates" "this" {
+  repository = github_repository.this.id
+  enabled    = true
+}
+
+data "github_team" "platform_team" {
+  slug = "platform"
+}
+
+resource "github_repository_collaborators" "this" {
+  repository = github_repository.this.id
+
+  team {
+    team_id    = data.github_team.platform_team.id
+    permission = "maintain"
+  }
+}
